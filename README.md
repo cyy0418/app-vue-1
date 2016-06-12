@@ -1,4 +1,4 @@
-# l2
+# app-vue-1
 
 > A Vue.js project
 
