@@ -5,7 +5,7 @@
   "author": "cyy",
   "private": true,
   "scripts": {
-    "start":"node build/dev-server.js",
+    "start":"node server.js",
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
@@ -13,7 +13,7 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
-  "main":"build/dev-server.js",
+  "main":"server.js",
   "dependencies": {
     "babel-runtime": "^6.0.0",
     "vue": "^1.0.21",
