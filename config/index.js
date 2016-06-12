@@ -1,6 +1,8 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
-
+var MONGODB_HOST = process.env.OPENSHIFT_MONGODB_DB_URL || "127.0.0.1";
+var MONGODB_PORT = process.env.OPENSHIFT_MONGODB_DB_PORT || "27017";
+var MONGODB_URL = "mongodb://admin:Whr6yV48t_7g@"+MONGODB_HOST+":"+MONGODB_PORT;
 module.exports = {
   build: {
     env: require('./prod.env'),
@@ -18,5 +20,8 @@ module.exports = {
     env: require('./dev.env'),
     port: 9080,
     proxyTable: {}
+  },
+  db:{
+    user:MONGODB_URL+"/user"
   }
 }
