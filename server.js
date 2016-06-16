@@ -6,7 +6,7 @@ var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./build/webpack.prod.conf')
   : require('./build/webpack.dev.conf')
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8090
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
 // default port where dev server listens for incoming traffic
@@ -58,7 +58,7 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.build.assetsPublicPath, config.build.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
-module.exports = app.listen(port,server_ip_address, function (err) {
+module.exports = app.listen(port, function (err) {
   if (err) {
     console.log(err)
     return
